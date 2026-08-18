@@ -32,5 +32,19 @@ public class App {
         System.out.println("Texto original: " + texto);
         System.out.println("Texto codificado: " + codificadoFischer);
         System.out.println("Texto decodificado: " + decodificadoFischer);
+
+        // Codificador Boeira
+        Codificador codBoeira = new CodificadorBoeira();
+
+        System.out.println("\n===== " + codBoeira.getNome() + " =====");
+        System.out.println("Versao: " + codBoeira.getDataCriacao());
+        System.out.println("Nivel de seguranca: " + codBoeira.getNivelSeguranca());
+
+        String codificadoBoeira = codBoeira.codifica(texto);
+        String decodificadoBoeira = codBoeira.decodifica(codificadoBoeira);
+
+        System.out.println("Texto original: " + texto);
+        System.out.println("Texto codificado: " + codificadoBoeira);
+        System.out.println("Texto decodificado: " + decodificadoBoeira);
     }
 }

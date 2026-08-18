@@ -3,11 +3,11 @@ import java.time.LocalDate;
 public class CodificadorFischer implements Codificador {
 
     public String getNome() {
-        return "Codificador Fischer";
+        return "Codificador Fischer (ATBASH)";
     }
 
     public LocalDate getDataCriacao() {
-        return LocalDate.of(2026, 8, 17);
+        return LocalDate.of(2026, 8, 16);
     }
 
     public int getNivelSeguranca() {

@@ -1,36 +1,35 @@
- import java.time.LocalDate;
+import java.time.LocalDate;
 
-public class CodificadorBoeira {
+public class CodificadorBoeira implements Codificador{
     public String getNome() {
-        return "Codificador ";
+        return "Codificador Boeira (ROT13)";
     }
 
     public LocalDate getDataCriacao() {
-        return LocalDate.of(2025, 03, 13);
+        return LocalDate.of(2026, 8, 17);
     }
 
-    public int getNivelSeguranca(){
-        return 0;
+    public int getNivelSeguranca() {
+        return 30; // ROT13 é bem básico
     }
 
     public String codifica(String str) {
-        StringBuilder encoded = new StringBuilder();
-
+         StringBuilder resultado = new StringBuilder();
         for (char c : str.toCharArray()) {
-            encoded.append((char) (c + 1));
+            if (c >= 'a' && c <= 'z') {
+                resultado.append((char) ((c - 'a' + 13) % 26 + 'a'));
+            } else if (c >= 'A' && c <= 'Z') {
+                resultado.append((char) ((c - 'A' + 13) % 26 + 'A'));
+            } else {
+                resultado.append(c);
+            }
         }
-
-        return encoded.toString();
+        return resultado.toString();
     }
 
     public String decodifica(String str) {
-        StringBuilder encoded = new StringBuilder();
-        
-        for (char c : str.toCharArray()) {
-            encoded.append((char) (c - 1));
-        }
-        
-        return encoded.toString();
+        return codifica(str); // ROT13 é simétrico então vise e versa
     }
-}
 
+    
+}
