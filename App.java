@@ -2,7 +2,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        String texto = "Este e o string a ser codificado";
+        String texto = "Tri Campeao da Libertadores e Maior do Sul";
 
         // Codificador Simples
         Codificador codSimples = new CodificadorSimples();
@@ -19,7 +19,7 @@ public class App {
         System.out.println("Texto decodificado: " + decodificadoSimples);
 
 
-        // Codificador Fischer
+        // Codificador Lucas Fischer
         Codificador codFischer = new CodificadorFischer();
 
         System.out.println("\n===== " + codFischer.getNome() + " =====");
@@ -33,7 +33,7 @@ public class App {
         System.out.println("Texto codificado: " + codificadoFischer);
         System.out.println("Texto decodificado: " + decodificadoFischer);
 
-        // Codificador Boeira
+        // Codificador Eduardo Boeira
         Codificador codBoeira = new CodificadorBoeira();
 
         System.out.println("\n===== " + codBoeira.getNome() + " =====");
